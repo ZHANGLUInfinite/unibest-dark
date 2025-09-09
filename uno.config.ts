@@ -35,6 +35,10 @@ export default defineConfig({
     {
       center: 'flex justify-center items-center',
     },
+    {
+      // darkBgAndText: 'dark:bg-[var(--wot-dark-background2)] dark:text-gray-200',
+      darkBgAndText: 'dark:darkbg-text-primary',
+    },
   ],
   // 动态图标需要在这里配置，或者写在vue页面中注释掉
   safelist: ['i-carbon-code'],
@@ -48,6 +52,7 @@ export default defineConfig({
     ],
     ['pt-safe', { 'padding-top': 'env(safe-area-inset-top)' }],
     ['pb-safe', { 'padding-bottom': 'env(safe-area-inset-bottom)' }],
+    ['darkbg-text-primary', { '--un-text-opacity': '1', 'background-color': 'var(--wot-dark-background2, #222)', 'color': 'rgb(229 231 235 / var(--un-text-opacity))' }],
   ],
   theme: {
     colors: {

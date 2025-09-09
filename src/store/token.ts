@@ -10,7 +10,6 @@ import {
 } from '@/api/login'
 import { isDoubleTokenRes, isSingleTokenRes } from '@/api/types/login'
 import { isDoubleTokenMode } from '@/utils'
-import { useUserStore } from './user'
 
 // 初始化状态
 const tokenInfoState = isDoubleTokenMode

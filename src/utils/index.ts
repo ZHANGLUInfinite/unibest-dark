@@ -14,7 +14,7 @@ export function getLastPage() {
  * path 如 '/pages/login/login'
  * redirectPath 如 '/pages/demo/base/route-interceptor'
  */
-export function currRoute() {
+export function currRoute(): { path: string, query: Record<string, string> } {
   const lastPage = getLastPage()
   if (!lastPage) {
     return {

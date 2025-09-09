@@ -71,13 +71,14 @@ function getImageByIndex(index: number, item: CustomTabBarItem) {
 
 <template>
   <view v-if="customTabbarEnable" class="h-50px pb-safe">
-    <view class="border-and-fixed bg-white" @touchmove.stop.prevent>
+    <view
+      class="border-and-fixed bg-white dark:bg-[var(--wot-dark-background2)] dark:text-gray-200"
+      @touchmove.stop.prevent
+    >
       <view class="h-50px flex items-center">
         <view
-          v-for="(item, index) in tabbarList" :key="index"
-          class="flex flex-1 flex-col items-center justify-center"
-          :style="{ color: getColorByIndex(index) }"
-          @click="handleClick(index)"
+          v-for="(item, index) in tabbarList" :key="index" class="flex flex-1 flex-col items-center justify-center"
+          :style="{ color: getColorByIndex(index) }" @click="handleClick(index)"
         >
           <view v-if="item.isBulge" class="relative">
             <!-- 中间一个鼓包tabbarItem的处理 -->
@@ -113,7 +114,9 @@ function getImageByIndex(index: number, item: CustomTabBarItem) {
                 <view class="absolute right-0 top-0 h-2 w-2 rounded-full bg-#f56c6c" />
               </template>
               <template v-else>
-                <view class="absolute top-0 box-border h-5 min-w-5 center rounded-full bg-#f56c6c px-1 text-center text-xs text-white -right-3">
+                <view
+                  class="absolute top-0 box-border h-5 min-w-5 center rounded-full bg-#f56c6c px-1 text-center text-xs text-white -right-3"
+                >
                   {{ item.badge > 99 ? '99+' : item.badge }}
                 </view>
               </template>
@@ -135,6 +138,7 @@ function getImageByIndex(index: number, item: CustomTabBarItem) {
   right: 0;
 
   border-top: 1px solid #eee;
+  border-top: 1px solid #f9f9f9;
   box-sizing: border-box;
 }
 // 中间鼓包的样式

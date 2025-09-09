@@ -19,7 +19,7 @@ function doRegister() {
 </script>
 
 <template>
-  <view class="login">
+  <view class="login darkBgAndText">
     <view class="text-center">
       注册页
     </view>

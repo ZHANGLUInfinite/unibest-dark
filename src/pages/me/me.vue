@@ -3,7 +3,6 @@ import type { IUploadSuccessInfo } from '@/api/types/login'
 import { storeToRefs } from 'pinia'
 import { LOGIN_PAGE } from '@/router/config'
 import { useUserStore } from '@/store'
-import { useTokenStore } from '@/store/token'
 import { useUpload } from '@/utils/uploadFile'
 
 definePage({
@@ -77,10 +76,10 @@ function handleLogout() {
   uni.showModal({
     title: '提示',
     content: '确定要退出登录吗？',
-    success: (res) => {
+    success: async (res) => {
       if (res.confirm) {
         // 清空用户信息
-        useTokenStore().logout()
+        await useTokenStore().logout()
         // 执行退出登录逻辑
         uni.showToast({
           title: '退出登录成功',
@@ -92,7 +91,7 @@ function handleLogout() {
         // #endif
         // #ifndef MP-WEIXIN
         // 非微信小程序，去登录页
-        // uni.navigateTo({ url: LOGIN_PAGE })
+	// uni.navigateTo({ url: LOGIN_PAGE })
         // #endif
       }
     },
@@ -101,7 +100,7 @@ function handleLogout() {
 </script>
 
 <template>
-  <view class="profile-container">
+  <view class="profile-container dark:bg-[var(--wot-dark-background2)] dark:text-gray-200">
     <!-- 用户信息区域 -->
     <view class="user-info-section">
       <!-- #ifdef MP-WEIXIN -->
@@ -154,6 +153,7 @@ function handleLogout() {
 <style lang="scss" scoped>
 /* 基础样式 */
 .profile-container {
+  // height: 100%;  /* 3.14.0 */
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   // background-color: #f7f8fa;
@@ -164,7 +164,7 @@ function handleLogout() {
   align-items: center;
   padding: 40rpx;
   margin: 30rpx 30rpx 20rpx;
-  background-color: #fff;
+  background-color: #fff; /* 3.14.0 */
   border-radius: 24rpx;
   box-shadow: 0 6rpx 20rpx rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;

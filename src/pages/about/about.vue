@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { isApp, isAppAndroid, isAppHarmony, isAppIOS, isAppPlus, isH5, isMpWeixin, isWeb } from '@uni-helper/uni-env'
 import { LOGIN_PAGE } from '@/router/config'
-import { useTokenStore } from '@/store'
 import { tabbarStore } from '@/tabbar/store'
 import RequestComp from './components/request.vue'
 import VBindCss from './components/VBindCss.vue'
@@ -95,7 +94,7 @@ onShow(() => {
 <template root="uniKuRoot">
   <!-- page-meta 使用范例 -->
   <page-meta page-style="overflow: auto" />
-  <view>
+  <view class="darkBgAndText">
     <view class="mt-8 text-center text-xl text-gray-400">
       请求调用、unocss、static图片
     </view>

@@ -86,9 +86,21 @@ export default ({ command, mode }) => {
       },
       UnoCSS(),
       AutoImport({
-        imports: ['vue', 'uni-app'],
+        imports: [
+          'vue',
+          'pinia',
+          'uni-app',
+          // {
+          //   from: 'uni-mini-router',
+          //   imports: ['createRouter', 'useRouter', 'useRoute'],
+          // },
+          {
+            from: 'wot-design-uni',
+            imports: ['useToast', 'useMessage', 'useNotify', 'CommonUtil'],
+          },
+        ],
         dts: 'src/types/auto-import.d.ts',
-        dirs: ['src/hooks'], // 自动导入 hooks
+        dirs: ['src/hooks', 'src/store'], // 自动导入 hooks
         vueTemplate: true, // default false
       }),
       // Optimization 插件需要 page.json 文件，故应在 UniPages 插件之后执行

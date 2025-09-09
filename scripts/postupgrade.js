@@ -13,7 +13,7 @@ const execPromise = promisify(exec)
 
 // 定义要执行的命令
 const dependencies = [
-  '@dcloudio/uni-app-harmony',
+  // '@dcloudio/uni-app-harmony',
   // TODO: 如果不需要某个平台的小程序，请手动删除或注释掉
   '@dcloudio/uni-mp-alipay',
   '@dcloudio/uni-mp-baidu',

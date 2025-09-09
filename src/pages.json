@@ -1,10 +1,16 @@
 {
   "globalStyle": {
-    "navigationStyle": "default",
     "navigationBarTitleText": "unibest",
-    "navigationBarBackgroundColor": "#f8f8f8",
-    "navigationBarTextStyle": "black",
-    "backgroundColor": "#FFFFFF"
+    "navigationBarBackgroundColor": "@navBgColor",
+    "navigationBarTextStyle": "@navTxtStyle",
+    "backgroundColor": "@bgColor",
+    "backgroundTextStyle": "@bgTxtStyle",
+    "backgroundColorTop": "@bgColorTop",
+    "backgroundColorBottom": "@bgColorBottom",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50,
+    "animationType": "pop-in",
+    "animationDuration": 300
   },
   "easycom": {
     "autoscan": true,
@@ -16,10 +22,10 @@
   },
   "tabBar": {
     "custom": true,
-    "color": "#999999",
-    "selectedColor": "#018d71",
-    "backgroundColor": "#F8F8F8",
-    "borderStyle": "black",
+    "color": "@tabColor",
+    "selectedColor": "@tabSelectedColor",
+    "backgroundColor": "@tabBgColor",
+    "borderStyle": "@tabBorderStyle",
     "height": "50px",
     "fontSize": "10px",
     "iconWidth": "24px",

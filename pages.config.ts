@@ -6,9 +6,24 @@ export default defineUniPages({
   globalStyle: {
     navigationStyle: 'default',
     navigationBarTitleText: 'unibest',
-    navigationBarBackgroundColor: '#f8f8f8',
-    navigationBarTextStyle: 'black',
-    backgroundColor: '#FFFFFF',
+
+    // 导航栏配置
+    navigationBarBackgroundColor: '@navBgColor',
+    navigationBarTextStyle: '@navTxtStyle',
+
+    // 页面背景配置
+    backgroundColor: '@bgColor',
+    backgroundTextStyle: '@bgTxtStyle',
+    backgroundColorTop: '@bgColorTop',
+    backgroundColorBottom: '@bgColorBottom',
+
+    // 下拉刷新配置
+    enablePullDownRefresh: false,
+    onReachBottomDistance: 50,
+
+    // 动画配置
+    animationType: 'pop-in',
+    animationDuration: 300,
   },
   easycom: {
     autoscan: true,

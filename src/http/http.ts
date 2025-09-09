@@ -2,7 +2,6 @@ import type { IDoubleTokenRes } from '@/api/types/login'
 import type { CustomRequestOptions } from '@/http/types'
 import { nextTick } from 'vue'
 import { LOGIN_PAGE } from '@/router/config'
-import { useTokenStore } from '@/store/token'
 import { isDoubleTokenMode } from '@/utils'
 
 // 刷新 token 状态管理

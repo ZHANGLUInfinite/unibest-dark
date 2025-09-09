@@ -29,11 +29,6 @@ export default defineManifestConfig({
   'versionCode': '100',
   'transformPx': false,
   'locale': VITE_FALLBACK_LOCALE, // 'zh-Hans'
-  'h5': {
-    router: {
-      base: VITE_APP_PUBLIC_BASE,
-    },
-  },
   /* 5+App特有相关 */
   'app-plus': {
     usingComponents: true,
@@ -113,6 +108,38 @@ export default defineManifestConfig({
         },
       },
     },
+    // nativePlugins: {
+    //   'DCloud-RichAlert': {
+    //     __plugin_info__: {
+    //       name: '原生增强提示框插件',
+    //       description: '增强的原生提示框。可自定义颜色、按钮数量、放置超链接和checkbox。可覆盖页面中的原生组件',
+    //       platforms: 'Android,iOS',
+    //       url: 'https://ext.dcloud.net.cn/plugin?id=36',
+    //       android_package_name: 'uni.app.UNI2D1B35B',
+    //       ios_bundle_id: '',
+    //       isCloud: true,
+    //       bought: 1,
+    //       pid: '36',
+    //       parameters: {},
+    //     },
+    //   },
+    //   'HG-FloatButton': {
+    //     __plugin_info__: {
+    //       name: 'HG-FloatButton',
+    //       description: '全局浮窗',
+    //       platforms: 'Android',
+    //       url: '',
+    //       android_package_name: '',
+    //       ios_bundle_id: '',
+    //       isCloud: false,
+    //       bought: -1,
+    //       pid: '',
+    //       parameters: {},
+    //     },
+    //   },
+    // },
+    "darkmode": true,
+    "themeLocation": "theme.json"
   },
   /* 快应用特有相关 */
   'quickapp': {},
@@ -131,6 +158,9 @@ export default defineManifestConfig({
     // styleIsolation: 'shared',
     usingComponents: true,
     // __usePrivacyCheck__: true,
+    lazyCodeLoading: 'requiredComponents',
+    "darkmode": true,
+    "themeLocation": "theme.json"
   },
   'mp-alipay': {
     usingComponents: true,
@@ -146,4 +176,11 @@ export default defineManifestConfig({
     enable: false,
   },
   'vueVersion': '3',
+  'h5': {
+    router: {
+      base: VITE_APP_PUBLIC_BASE,
+    },
+    "darkmode": true,
+    "themeLocation": "theme.json"
+  },
 })

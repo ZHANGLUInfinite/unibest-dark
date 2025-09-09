@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { useTokenStore } from '@/store/token'
-import { useUserStore } from '@/store/user'
 import { tabbarList } from '@/tabbar/config'
 import { isPageTabbar } from '@/tabbar/store'
 import { ensureDecodeURIComponent } from '@/utils'
@@ -83,7 +81,7 @@ async function doLogin() {
 </script>
 
 <template>
-  <view class="login">
+  <view class="login darkBgAndText">
     <!-- 本页面是非MP的登录页，主要用于 h5 和 APP -->
     <view class="text-center">
       登录页
