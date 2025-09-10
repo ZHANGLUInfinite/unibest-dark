@@ -80,36 +80,6 @@
     "compatible": {
       "ignoreVersion": true
     },
-    "nativePlugins": {
-      "DCloud-RichAlert": {
-        "__plugin_info__": {
-          "name": "原生增强提示框插件",
-          "description": "增强的原生提示框。可自定义颜色、按钮数量、放置超链接和checkbox。可覆盖页面中的原生组件",
-          "platforms": "Android,iOS",
-          "url": "https://ext.dcloud.net.cn/plugin?id=36",
-          "android_package_name": "uni.app.UNI2D1B35B",
-          "ios_bundle_id": "",
-          "isCloud": true,
-          "bought": 1,
-          "pid": "36",
-          "parameters": {}
-        }
-      },
-      "HG-FloatButton": {
-        "__plugin_info__": {
-          "name": "HG-FloatButton",
-          "description": "全局浮窗",
-          "platforms": "Android",
-          "url": "",
-          "android_package_name": "",
-          "ios_bundle_id": "",
-          "isCloud": false,
-          "bought": -1,
-          "pid": "",
-          "parameters": {}
-        }
-      }
-    },
     "darkmode": true,
     "themeLocation": "theme.json"
   },

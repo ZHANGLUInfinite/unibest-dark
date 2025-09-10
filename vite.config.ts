@@ -113,7 +113,7 @@ export default ({ command, mode }) => {
         dts: {
           base: 'src/types',
         },
-        logger: false,
+        logger: mode !== 'production',
       }),
 
       ViteRestart({

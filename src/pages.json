@@ -1,5 +1,6 @@
 {
   "globalStyle": {
+    "navigationStyle": "default",
     "navigationBarTitleText": "unibest",
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
@@ -49,6 +50,7 @@
     {
       "path": "pages/index/index",
       "type": "home",
+      "name": "Home",
       "style": {
         "navigationStyle": "custom",
         "navigationBarTitleText": "首页"
