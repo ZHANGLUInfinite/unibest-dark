@@ -1,5 +1,7 @@
 import type { TabBar } from '@uni-helper/vite-plugin-uni-pages'
 
+import { tabBarGlobalStyle } from '../theme.config'
+
 /**
  * tabbar 选择的策略，更详细的介绍见 tabbar.md 文件
  * 0: 'NO_TABBAR' `无 tabbar`
@@ -141,14 +143,12 @@ export const tabbarList = customTabbarEnable ? customTabbarList : nativeTabbarLi
 const _tabbar: TabBar = {
   // 只有微信小程序支持 custom。App 和 H5 不生效
   custom: selectedTabbarStrategy === TABBAR_STRATEGY_MAP.CUSTOM_TABBAR_WITH_CACHE,
-  // color: '#999999',
-  // selectedColor: '#018d71',
-  // backgroundColor: '#F8F8F8',
-  // borderStyle: 'black',
-  color: '@tabColor',
-  selectedColor: '@tabSelectedColor',
-  backgroundColor: '@tabBgColor',
-  borderStyle: '@tabBorderStyle',
+  color: '#999999',
+  selectedColor: '#018d71',
+  backgroundColor: '#F8F8F8',
+  borderStyle: 'black',
+  // 主题、暗黑模式样式
+  ...tabBarGlobalStyle,
 
   height: '50px',
   fontSize: '10px',

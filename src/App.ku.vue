@@ -29,7 +29,7 @@ defineExpose({
     <view class="hidden text-center">
       {{ helloKuRoot }}，这里可以配置全局的东西
     </view>
-
+    <div />
     <KuRootView />
 
     <FgTabbar v-if="isCurrentPageTabbar" />
