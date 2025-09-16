@@ -33,9 +33,9 @@ const { run: uploadAvatar } = useUpload<IUploadSuccessInfo>(
 // 微信小程序下登录
 async function handleLogin() {
   // #ifdef MP-WEIXIN
-
   // 微信登录
   await tokenStore.wxLogin()
+
   // #endif
   // #ifndef MP-WEIXIN
   uni.navigateTo({
@@ -91,7 +91,7 @@ function handleLogout() {
         // #endif
         // #ifndef MP-WEIXIN
         // 非微信小程序，去登录页
-	// uni.navigateTo({ url: LOGIN_PAGE })
+        // uni.navigateTo({ url: LOGIN_PAGE })
         // #endif
       }
     },
