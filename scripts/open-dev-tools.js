@@ -38,7 +38,8 @@ function _openDevTools() {
   else if (platform === 'win32' || platform === 'win64') {
     // Windows
     if (UNI_PLATFORM === 'mp-weixin') {
-      command = `"C:\\Program Files (x86)\\Tencent\\微信web开发者工具\\cli.bat" -o "${projectPath}"`
+      // command = `"C:\\Program Files (x86)\\Tencent\\微信web开发者工具\\cli.bat" -o "${projectPath}"`
+      command = `"D:\\Programs\\微信web开发者工具\\cli.bat" -o "${projectPath}"`
     }
   }
   else {
