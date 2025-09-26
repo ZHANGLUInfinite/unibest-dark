@@ -138,8 +138,8 @@ export default defineManifestConfig({
     //     },
     //   },
     // },
-    "darkmode": true,
-    "themeLocation": "theme.json"
+    darkmode: true,
+    themeLocation: 'theme.json',
   },
   /* 快应用特有相关 */
   'quickapp': {},
@@ -155,16 +155,22 @@ export default defineManifestConfig({
     optimization: {
       subPackages: true,
     },
+    // 是否合并组件虚拟节点外层属性，uni-app 3.5.1+ 开始支持。目前仅支持 style、class 属性。
+    // 默认不开启（undefined），这里设置为开启。
+    mergeVirtualHostAttributes: true,
     // styleIsolation: 'shared',
     usingComponents: true,
     // __usePrivacyCheck__: true,
     lazyCodeLoading: 'requiredComponents',
-    "darkmode": true,
-    "themeLocation": "theme.json"
+    darkmode: true,
+    themeLocation: 'theme.json',
   },
   'mp-alipay': {
     usingComponents: true,
     styleIsolation: 'shared',
+    optimization: {
+      subPackages: true,
+    },
   },
   'mp-baidu': {
     usingComponents: true,
@@ -180,7 +186,7 @@ export default defineManifestConfig({
     router: {
       base: VITE_APP_PUBLIC_BASE,
     },
-    "darkmode": true,
-    "themeLocation": "theme.json"
+    darkmode: true,
+    themeLocation: 'theme.json',
   },
 })

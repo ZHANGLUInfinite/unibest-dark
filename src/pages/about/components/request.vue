@@ -8,6 +8,19 @@ import { getFooAPI } from '@/api/foo'
 // }
 const initialData = undefined
 
+// 直接请求示例
+async function reqFooAPI() {
+  try {
+    const res = await getFooAPI('菲鸽')
+    console.log('直接请求示例res', res)
+  }
+  catch (err) {
+    console.log(err)
+  }
+}
+reqFooAPI()
+
+// 直接useRequest请求示例
 const { loading, error, data, run } = useRequest<IFooItem>(() => getFooAPI('菲鸽'), {
   immediate: true,
   initialData,
@@ -37,11 +50,19 @@ function reset() {
         loading...
       </view>
       <block v-else>
-        <view class="text-xl">
-          请求数据如下
+        <view v-if="error instanceof Error" class="text-red leading-8">
+          错误: {{ error.message }}
         </view>
-        <view class="text-green leading-8">
-          {{ JSON.stringify(data) }}
+        <view v-else-if="error" class="text-red leading-8">
+          错误: 未知错误
+        </view>
+        <view v-else>
+          <view class="text-xl">
+            请求数据如下
+          </view>
+          <view class="text-green leading-8">
+            {{ JSON.stringify(data) }}
+          </view>
         </view>
       </block>
     </view>
