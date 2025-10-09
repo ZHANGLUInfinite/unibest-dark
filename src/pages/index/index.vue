@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { LOGIN_PAGE } from '@/router/config'
-
 import { safeAreaInsets } from '@/utils/systemInfo'
 
 definePage({
@@ -50,15 +48,6 @@ onLoad(() => {
   console.log('测试 uni API 自动引入: onLoad')
 })
 
-function toLogin() {
-  uni.navigateTo({
-    url: LOGIN_PAGE,
-  })
-  // loading.loading({
-  //   msg: '数据加载中',
-  //   cover: true,
-  // })
-}
 // #region gotoAbout
 function gotoAbout() {
   uni.navigateTo({
@@ -151,9 +140,6 @@ function gotoAbout() {
         </wd-cell>
       </wd-cell-group>
     </demo-block>
-    <wd-button class="mt-4 text-center" block @click="toLogin">
-      点击去登录页
-    </wd-button>
     <view class="mt-4 text-center">
       <wd-button type="primary" class="ml-2" @click="gotoAbout">
         前往示例页
