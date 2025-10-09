@@ -59,6 +59,13 @@ function toLogin() {
   //   cover: true,
   // })
 }
+// #region gotoAbout
+function gotoAbout() {
+  uni.navigateTo({
+    url: '/pages-sub/about/about',
+  })
+}
+// #endregion
 </script>
 
 <template>
@@ -147,6 +154,11 @@ function toLogin() {
     <wd-button class="mt-4 text-center" block @click="toLogin">
       点击去登录页
     </wd-button>
+    <view class="mt-4 text-center">
+      <wd-button type="primary" class="ml-2" @click="gotoAbout">
+        前往示例页
+      </wd-button>
+    </view>
     <view class="h-6" />
 
     <!-- 主题色选择 ActionSheet -->

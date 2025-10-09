@@ -105,6 +105,7 @@ declare global {
   const useModel: typeof import('vue')['useModel']
   const useNotify: typeof import('wot-design-uni')['useNotify']
   const useRequest: typeof import('../hooks/useRequest')['default']
+  const useScroll: typeof import('../hooks/useScroll')['useScroll']
   const useSlots: typeof import('vue')['useSlots']
   const useTabbar: typeof import('../hooks/useTabbar')['useTabbar']
   const useTemplateRef: typeof import('vue')['useTemplateRef']
@@ -239,6 +240,7 @@ declare module 'vue' {
     readonly useModel: UnwrapRef<typeof import('vue')['useModel']>
     readonly useNotify: UnwrapRef<typeof import('wot-design-uni')['useNotify']>
     readonly useRequest: UnwrapRef<typeof import('../hooks/useRequest')['default']>
+    readonly useScroll: UnwrapRef<typeof import('../hooks/useScroll')['useScroll']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useTabbar: UnwrapRef<typeof import('../hooks/useTabbar')['useTabbar']>
     readonly useTemplateRef: UnwrapRef<typeof import('vue')['useTemplateRef']>
