@@ -6,13 +6,18 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const CommonUtil: typeof import('wot-design-uni')['CommonUtil']
   const EffectScope: typeof import('vue')['EffectScope']
+  const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
+  const createPinia: typeof import('pinia')['createPinia']
   const customRef: typeof import('vue')['customRef']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
+  const defineStore: typeof import('pinia')['defineStore']
   const effectScope: typeof import('vue')['effectScope']
+  const getActivePinia: typeof import('pinia')['getActivePinia']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const getCurrentWatcher: typeof import('vue')['getCurrentWatcher']
@@ -23,6 +28,11 @@ declare global {
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
   const isShallow: typeof import('vue')['isShallow']
+  const mapActions: typeof import('pinia')['mapActions']
+  const mapGetters: typeof import('pinia')['mapGetters']
+  const mapState: typeof import('pinia')['mapState']
+  const mapStores: typeof import('pinia')['mapStores']
+  const mapWritableState: typeof import('pinia')['mapWritableState']
   const markRaw: typeof import('vue')['markRaw']
   const nextTick: typeof import('vue')['nextTick']
   const onActivated: typeof import('vue')['onActivated']
@@ -68,9 +78,14 @@ declare global {
   const readonly: typeof import('vue')['readonly']
   const ref: typeof import('vue')['ref']
   const resolveComponent: typeof import('vue')['resolveComponent']
+  const setActivePinia: typeof import('pinia')['setActivePinia']
+  const setMapStoreSuffix: typeof import('pinia')['setMapStoreSuffix']
   const shallowReactive: typeof import('vue')['shallowReactive']
   const shallowReadonly: typeof import('vue')['shallowReadonly']
   const shallowRef: typeof import('vue')['shallowRef']
+  const store: typeof import('../store/index')['default']
+  const storeToRefs: typeof import('pinia')['storeToRefs']
+  const themeColorOptions: typeof import('../hooks/useManualTheme')['themeColorOptions']
   const toRaw: typeof import('vue')['toRaw']
   const toRef: typeof import('vue')['toRef']
   const toRefs: typeof import('vue')['toRefs']
@@ -80,12 +95,25 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useGlobalLoading: typeof import('../hooks/useGlobalLoading')['useGlobalLoading']
+  const useGlobalMessage: typeof import('../hooks/useGlobalMessage')['useGlobalMessage']
+  const useGlobalToast: typeof import('../hooks/useGlobalToast')['useGlobalToast']
   const useId: typeof import('vue')['useId']
+  const useManualTheme: typeof import('../hooks/useManualTheme')['useManualTheme']
+  const useManualThemeStore: typeof import('../store/manualTheme')['useManualThemeStore']
+  const useMessage: typeof import('wot-design-uni')['useMessage']
   const useModel: typeof import('vue')['useModel']
+  const useNotify: typeof import('wot-design-uni')['useNotify']
   const useRequest: typeof import('../hooks/useRequest')['default']
   const useSlots: typeof import('vue')['useSlots']
+  const useTabbar: typeof import('../hooks/useTabbar')['useTabbar']
   const useTemplateRef: typeof import('vue')['useTemplateRef']
+  const useTheme: typeof import('../hooks/useTheme')['useTheme']
+  const useThemeStore: typeof import('../store/theme')['useThemeStore']
+  const useToast: typeof import('wot-design-uni')['useToast']
+  const useTokenStore: typeof import('../store/token')['useTokenStore']
   const useUpload: typeof import('../hooks/useUpload')['default']
+  const useUserStore: typeof import('../store/user')['useUserStore']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
   const watchPostEffect: typeof import('vue')['watchPostEffect']
@@ -96,6 +124,15 @@ declare global {
   // @ts-ignore
   export type { Component, Slot, Slots, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, ShallowRef, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef } from 'vue'
   import('vue')
+  // @ts-ignore
+  export type { GlobalMessageOptions } from '../hooks/useGlobalMessage'
+  import('../hooks/useGlobalMessage')
+  // @ts-ignore
+  export type { ThemeColorOption, ThemeMode } from '../hooks/useManualTheme'
+  import('../hooks/useManualTheme')
+  // @ts-ignore
+  export type { TabbarItem } from '../hooks/useTabbar'
+  import('../hooks/useTabbar')
 }
 
 // for vue template auto import
@@ -103,13 +140,18 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
+    readonly CommonUtil: UnwrapRef<typeof import('wot-design-uni')['CommonUtil']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
+    readonly createPinia: UnwrapRef<typeof import('pinia')['createPinia']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
+    readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly getCurrentWatcher: UnwrapRef<typeof import('vue')['getCurrentWatcher']>
@@ -120,6 +162,11 @@ declare module 'vue' {
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
     readonly isShallow: UnwrapRef<typeof import('vue')['isShallow']>
+    readonly mapActions: UnwrapRef<typeof import('pinia')['mapActions']>
+    readonly mapGetters: UnwrapRef<typeof import('pinia')['mapGetters']>
+    readonly mapState: UnwrapRef<typeof import('pinia')['mapState']>
+    readonly mapStores: UnwrapRef<typeof import('pinia')['mapStores']>
+    readonly mapWritableState: UnwrapRef<typeof import('pinia')['mapWritableState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
@@ -165,9 +212,14 @@ declare module 'vue' {
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
     readonly ref: UnwrapRef<typeof import('vue')['ref']>
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
+    readonly setActivePinia: UnwrapRef<typeof import('pinia')['setActivePinia']>
+    readonly setMapStoreSuffix: UnwrapRef<typeof import('pinia')['setMapStoreSuffix']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
+    readonly store: UnwrapRef<typeof import('../store/index')['default']>
+    readonly storeToRefs: UnwrapRef<typeof import('pinia')['storeToRefs']>
+    readonly themeColorOptions: UnwrapRef<typeof import('../hooks/useManualTheme')['themeColorOptions']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
@@ -177,12 +229,25 @@ declare module 'vue' {
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useGlobalLoading: UnwrapRef<typeof import('../hooks/useGlobalLoading')['useGlobalLoading']>
+    readonly useGlobalMessage: UnwrapRef<typeof import('../hooks/useGlobalMessage')['useGlobalMessage']>
+    readonly useGlobalToast: UnwrapRef<typeof import('../hooks/useGlobalToast')['useGlobalToast']>
     readonly useId: UnwrapRef<typeof import('vue')['useId']>
+    readonly useManualTheme: UnwrapRef<typeof import('../hooks/useManualTheme')['useManualTheme']>
+    readonly useManualThemeStore: UnwrapRef<typeof import('../store/manualTheme')['useManualThemeStore']>
+    readonly useMessage: UnwrapRef<typeof import('wot-design-uni')['useMessage']>
     readonly useModel: UnwrapRef<typeof import('vue')['useModel']>
+    readonly useNotify: UnwrapRef<typeof import('wot-design-uni')['useNotify']>
     readonly useRequest: UnwrapRef<typeof import('../hooks/useRequest')['default']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
+    readonly useTabbar: UnwrapRef<typeof import('../hooks/useTabbar')['useTabbar']>
     readonly useTemplateRef: UnwrapRef<typeof import('vue')['useTemplateRef']>
+    readonly useTheme: UnwrapRef<typeof import('../hooks/useTheme')['useTheme']>
+    readonly useThemeStore: UnwrapRef<typeof import('../store/theme')['useThemeStore']>
+    readonly useToast: UnwrapRef<typeof import('wot-design-uni')['useToast']>
+    readonly useTokenStore: UnwrapRef<typeof import('../store/token')['useTokenStore']>
     readonly useUpload: UnwrapRef<typeof import('../hooks/useUpload')['default']>
+    readonly useUserStore: UnwrapRef<typeof import('../store/user')['useUserStore']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>
