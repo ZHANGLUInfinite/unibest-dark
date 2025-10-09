@@ -102,7 +102,7 @@ function handleLogout() {
 <template>
   <view class="profile-container dark:bg-[var(--wot-dark-background2)] dark:text-gray-200">
     <!-- 用户信息区域 -->
-    <view class="user-info-section">
+    <view class="user-info-section !dark:shadow-[0_6px_20px_rgba(255,255,255,0.28)]">
       <!-- #ifdef MP-WEIXIN -->
       <button class="avatar-button" open-type="chooseAvatar" @chooseavatar="onChooseAvatar">
         <image :src="userInfo.avatar" mode="scaleToFill" class="h-full w-full" />
@@ -164,7 +164,7 @@ function handleLogout() {
   align-items: center;
   padding: 40rpx;
   margin: 30rpx 30rpx 20rpx;
-  background-color: #fff; /* 3.14.0 */
+  // background-color: #fff; /* 3.14.0 */
   border-radius: 24rpx;
   box-shadow: 0 6rpx 20rpx rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
