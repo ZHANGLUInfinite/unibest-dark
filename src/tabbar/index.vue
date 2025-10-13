@@ -41,7 +41,7 @@ function handleClick(index: number) {
 }
 // #ifndef MP-WEIXIN
 // 因为有了 custom:true， 微信里面不需要多余的hide操作
-onLoad(() => {
+onMounted(() => {
   // 解决原生 tabBar 未隐藏导致有2个 tabBar 的问题
   needHideNativeTabbar
   && uni.hideTabBar({

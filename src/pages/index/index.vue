@@ -10,8 +10,12 @@ definePage({
   type: 'home',
   style: {
     // 'custom' 表示开启自定义导航栏，默认 'default'
-    navigationStyle: 'custom',
-    navigationBarTitleText: '首页',
+    'navigationStyle': 'custom',
+    'navigationBarTitleText': '首页',
+    'mp-alipay': { // 适配支付宝、钉钉小程序
+      transparentTitle: 'always',
+      titlePenetrate: 'YES',
+    },
   },
 })
 
