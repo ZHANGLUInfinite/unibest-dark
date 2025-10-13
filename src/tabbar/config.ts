@@ -20,7 +20,7 @@ export const TABBAR_STRATEGY_MAP = {
 // 如果是使用 NO_TABBAR(0)，nativeTabbarList 和 customTabbarList 都不生效(里面的配置不用管)
 // 如果是使用 NATIVE_TABBAR(1)，只需要配置 nativeTabbarList，customTabbarList 不生效
 // 如果是使用 CUSTOM_TABBAR(2,3)，只需要配置 customTabbarList，nativeTabbarList 不生效
-export const selectedTabbarStrategy = TABBAR_STRATEGY_MAP.CUSTOM_TABBAR_WITH_CACHE
+export const selectedTabbarStrategy = TABBAR_STRATEGY_MAP.CUSTOM_TABBAR_WITHOUT_CACHE
 
 type NativeTabBarItem = TabBar['list'][number]
 
@@ -125,8 +125,16 @@ const _tabbarList = customTabbarEnable ? customTabbarList.map(item => ({ text: i
 export const tabbarList = customTabbarEnable ? customTabbarList : nativeTabbarList
 
 const _tabbar: TabBar = {
+  // #ifdef MP-WEIXIN
   // 只有微信小程序支持 custom。App 和 H5 不生效
-  custom: selectedTabbarStrategy === TABBAR_STRATEGY_MAP.CUSTOM_TABBAR_WITH_CACHE,
+  custom: customTabbarEnable,
+  // #endif
+  // #ifdef MP-ALIPAY || MP-DINGTALK
+  // 支付宝 / 钉钉小程序 启用 customize
+  customize: customTabbarEnable,
+  /* 启用 Native 模式， 如未配置 customize:true，则 overlay:true 配置无效。 */
+  overlay: customTabbarEnable,
+  // #endif
   color: '#999999',
   selectedColor: '#018d71',
   backgroundColor: '#F8F8F8',
