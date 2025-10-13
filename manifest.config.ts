@@ -171,6 +171,17 @@ export default defineManifestConfig({
     optimization: {
       subPackages: true,
     },
+    compileOptions: {
+      globalObjectMode: 'enable',
+      transpile: {
+        script: {
+          ignore: [
+            'node_modules/**',
+            // '!node_modules/lodash-es/**',
+          ],
+        },
+      },
+    },
   },
   'mp-baidu': {
     usingComponents: true,
