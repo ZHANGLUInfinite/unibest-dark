@@ -25,6 +25,19 @@
     "node": ">=20",
     "pnpm": ">=9"
   },
+  "uni-app": {
+    "scripts": {
+      "mp-dingtalk": {
+        "title": "钉钉小程序",
+        "env": {
+          "UNI_PLATFORM": "mp-alipay"
+        },
+        "define": {
+          "MP-DINGTALK": true
+        }
+      }
+    }
+  },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "uvm": "npx @dcloudio/uvm@latest",
@@ -47,6 +60,7 @@
     "dev:mp:test": "uni -p mp-weixin --mode test",
     "dev:mp:prod": "uni -p mp-weixin --mode production",
     "dev:mp-alipay": "uni -p mp-alipay",
+    "dev:mp-dingtalk": "uni -p mp-dingtalk",
     "dev:mp-baidu": "uni -p mp-baidu",
     "dev:mp-jd": "uni -p mp-jd",
     "dev:mp-kuaishou": "uni -p mp-kuaishou",
@@ -72,6 +86,7 @@
     "build:prod": "uni build --mode production",
     "build:h5:ssr": "uni build --ssr",
     "build:mp-alipay": "uni build -p mp-alipay",
+    "build:mp-dingtalk": "uni build -p mp-dingtalk",
     "build:mp": "uni build -p mp-weixin",
     "build:mp:test": "uni build -p mp-weixin --mode test",
     "build:mp:prod": "uni build -p mp-weixin --mode production",
