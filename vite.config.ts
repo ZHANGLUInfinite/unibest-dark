@@ -118,7 +118,7 @@ export default defineConfig(({ command, mode }) => {
           },
         ],
         dts: 'src/types/auto-import.d.ts',
-        dirs: ['src/hooks', 'src/store'], // 自动导入 hooks
+        dirs: ['src/hooks'], // 自动导入 hooks
         vueTemplate: true, // default false
       }),
       ViteRestart({

@@ -50,7 +50,6 @@ export default defineConfig({
       center: 'flex justify-center items-center',
     },
     {
-      // darkBgAndText: 'dark:bg-[var(--wot-dark-background2)] dark:text-gray-200',
       darkBgAndText: 'dark:darkbg-text-primary',
     },
   ],

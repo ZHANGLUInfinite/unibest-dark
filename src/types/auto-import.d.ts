@@ -218,7 +218,6 @@ declare module 'vue' {
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
-    readonly store: UnwrapRef<typeof import('../store/index')['default']>
     readonly storeToRefs: UnwrapRef<typeof import('pinia')['storeToRefs']>
     readonly themeColorOptions: UnwrapRef<typeof import('../hooks/useManualTheme')['themeColorOptions']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
@@ -235,7 +234,6 @@ declare module 'vue' {
     readonly useGlobalToast: UnwrapRef<typeof import('../hooks/useGlobalToast')['useGlobalToast']>
     readonly useId: UnwrapRef<typeof import('vue')['useId']>
     readonly useManualTheme: UnwrapRef<typeof import('../hooks/useManualTheme')['useManualTheme']>
-    readonly useManualThemeStore: UnwrapRef<typeof import('../store/manualTheme')['useManualThemeStore']>
     readonly useMessage: UnwrapRef<typeof import('wot-design-uni')['useMessage']>
     readonly useModel: UnwrapRef<typeof import('vue')['useModel']>
     readonly useNotify: UnwrapRef<typeof import('wot-design-uni')['useNotify']>
@@ -245,11 +243,8 @@ declare module 'vue' {
     readonly useTabbar: UnwrapRef<typeof import('../hooks/useTabbar')['useTabbar']>
     readonly useTemplateRef: UnwrapRef<typeof import('vue')['useTemplateRef']>
     readonly useTheme: UnwrapRef<typeof import('../hooks/useTheme')['useTheme']>
-    readonly useThemeStore: UnwrapRef<typeof import('../store/theme')['useThemeStore']>
     readonly useToast: UnwrapRef<typeof import('wot-design-uni')['useToast']>
-    readonly useTokenStore: UnwrapRef<typeof import('../store/token')['useTokenStore']>
     readonly useUpload: UnwrapRef<typeof import('../hooks/useUpload')['default']>
-    readonly useUserStore: UnwrapRef<typeof import('../store/user')['useUserStore']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>

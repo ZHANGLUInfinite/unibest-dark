@@ -24,6 +24,11 @@ const description = ref(
 )
 console.log('index/index 首页打印了')
 
+const pageScrollTop = ref(0)
+const wdNavbarCustomStyle = computed(() => {
+  return pageScrollTop.value >= 44 ? '' : 'background-color: transparent!important;'
+})
+
 const {
   theme,
   toggleTheme,
@@ -52,6 +57,10 @@ onLoad(() => {
   console.log('测试 uni API 自动引入: onLoad')
 })
 
+onPageScroll(({ scrollTop }) => {
+  pageScrollTop.value = scrollTop
+})
+
 // #region gotoAbout
 function gotoAbout() {
   uni.navigateTo({
@@ -62,7 +71,9 @@ function gotoAbout() {
 </script>
 
 <template>
+  <wd-navbar title="首页" safe-area-inset-top fixed :custom-style="wdNavbarCustomStyle" />
   <view class="px-4 pt-2 darkBgAndText" :style="{ marginTop: `${safeAreaInsets?.top}px` }">
+    <image src="/static/index/home-navbar-bg.png" alt="" class="absolute left-0 top-0 mx-auto block h-300rpx w-100vh" />
     <view class="mt-10">
       <image src="/static/logo.svg" alt="" class="mx-auto block h-28 w-28" />
     </view>

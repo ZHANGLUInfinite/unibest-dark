@@ -1,5 +1,6 @@
 import type { ThemeColorOption, ThemeMode } from '@/hooks/types/theme'
 import { themeColorOptions } from '@/hooks/types/theme'
+import { useManualThemeStore } from '@/store'
 
 /**
  * 完整版主题管理组合式API

@@ -1,5 +1,5 @@
 import type { ThemeMode } from '@/hooks/types/theme'
-
+import { useThemeStore } from '@/store'
 /**
  * 简化版系统主题管理组合式API
  *
