@@ -171,15 +171,12 @@ export default defineManifestConfig({
     optimization: {
       subPackages: true,
     },
-    // 解决支付宝小程序和钉钉小程序开发工具报错【globalThis is not define】的问题
+    // 解决支付宝小程序开发工具报错 【globalThis is not defined】
     compileOptions: {
       globalObjectMode: 'enable',
       transpile: {
         script: {
-          ignore: [
-            'node_modules/**',
-            // '!node_modules/lodash-es/**',
-          ],
+          ignore: ['node_modules/**'],
         },
       },
     },
