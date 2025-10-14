@@ -127,16 +127,8 @@ const _tabbarList = customTabbarEnable ? customTabbarList.map(item => ({ text: i
 export const tabbarList = customTabbarEnable ? customTabbarList : nativeTabbarList
 
 const _tabbar: TabBar = {
-  // #ifdef MP-WEIXIN
   // 只有微信小程序支持 custom。App 和 H5 不生效
-  custom: customTabbarEnable,
-  // #endif
-  // #ifdef MP-ALIPAY || MP-DINGTALK
-  // 支付宝 / 钉钉小程序 启用 customize
-  customize: customTabbarEnable,
-  /* 启用 Native 模式， 如未配置 customize:true，则 overlay:true 配置无效。 */
-  overlay: customTabbarEnable,
-  // #endif
+  custom: selectedTabbarStrategy === TABBAR_STRATEGY_MAP.CUSTOM_TABBAR_WITH_CACHE,
   color: '#999999',
   selectedColor: '#018d71',
   backgroundColor: '#F8F8F8',
