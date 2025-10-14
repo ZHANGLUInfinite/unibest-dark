@@ -171,6 +171,7 @@ export default defineManifestConfig({
     optimization: {
       subPackages: true,
     },
+    // 解决支付宝小程序和钉钉小程序开发工具报错【globalThis is not define】的问题
     compileOptions: {
       globalObjectMode: 'enable',
       transpile: {
