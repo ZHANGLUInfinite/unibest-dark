@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useTokenStore } from '@/store/token'
 import { tabbarList } from '@/tabbar/config'
 import { isPageTabbar } from '@/tabbar/store'
 import { ensureDecodeURIComponent } from '@/utils'
@@ -22,7 +23,6 @@ onLoad((options) => {
   console.log('redirectUrl.value: ', redirectUrl.value)
 })
 
-const userStore = useUserStore()
 const tokenStore = useTokenStore()
 async function doLogin() {
   if (tokenStore.hasLogin) {

@@ -2,7 +2,7 @@
 import type { IUploadSuccessInfo } from '@/api/types/login'
 import { storeToRefs } from 'pinia'
 import { LOGIN_PAGE } from '@/router/config'
-import { useUserStore } from '@/store'
+import { useTokenStore, useUserStore } from '@/store'
 import { useUpload } from '@/utils/uploadFile'
 
 definePage({

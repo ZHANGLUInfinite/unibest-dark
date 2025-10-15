@@ -12,6 +12,7 @@ import {
   getWxCode,
 } from '@/api/login'
 import { isDoubleTokenRes, isSingleTokenRes } from '@/api/types/login'
+import { useUserStore } from '@/store/user'
 import { isDoubleTokenMode } from '@/utils'
 
 // 初始化状态
